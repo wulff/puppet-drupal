@@ -11,8 +11,9 @@ node 'default' {
   $github_token = 'YOUR GITHUB TOKEN'
 
   include puppet
-  include users
+#  include users
   include ssh
+  include iptables
   include cron
   include ppa
   include system

@@ -9,6 +9,6 @@ class ssh {
       ensure => present,
       type => 'ssh-rsa',
       key => $authorized_key,
-      require => User[$username];
+#      require => User[$username];
   }
 }
