@@ -9,6 +9,8 @@ Next, clone the Git repository:
 
     git clone git@github.com:wulff/puppet-drupal.git
 
-When you have cloned the directory, use Puppet to setup all the required packages (you can add `--noop` to perform a dry run):
+Before you can run Puppet, you must modify the default values in the `manifests/site.pp` file.
+
+Finally, use Puppet to setup all the required packages (you can add `--noop` to perform a dry run):
 
     sudo puppet --verbose --modulepath=/path/to/puppet-drupal/modules /path/to/puppet-drupal/manifests/site.pp
