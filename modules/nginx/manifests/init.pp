@@ -41,6 +41,12 @@ class nginx {
     '/etc/nginx/sites-available/drupal.conf':
       source => 'puppet:///modules/nginx/drupal.conf',
       require => Package['nginx-light'];
+    '/etc/nginx/sites-available/admin.conf':
+      source => 'puppet:///modules/nginx/admin.conf',
+      require => Package['nginx-light'];
+    '/etc/nginx/htpasswd':
+      source => 'puppet:///modules/nginx/htpasswd',
+      require => Package['nginx-light'];
 
     '/etc/nginx/sites-enabled/default':
       ensure => absent,
