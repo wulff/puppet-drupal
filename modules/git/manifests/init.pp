@@ -8,6 +8,5 @@ class git {
       content => template('git/gitconfig.erb'),
       owner => $username,
       group => $username,
-#      require => User[$username]
   }
 }

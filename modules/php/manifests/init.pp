@@ -1,4 +1,3 @@
-# todo: notify php-fpm of config file changes
 class php {
   # install order is important to avoid apache2 being installed to provide
   # the virtual package phpapi-20090626+lfs
@@ -40,7 +39,12 @@ class php {
     '/var/run/php5-fpm':
       ensure => directory;
   }
-}
 
-# TODO: mkdir /var/tmp/nginx/cache
-# TODO: install memcached
+  exec {
+    'extract-apc':
+      cwd => '/opt',
+      command => 'cp /usr/share/doc/php-apc/apc.php.gz . && gunzip apc.php.gz',
+      creates => '/opt/apc.php',
+      require => Package['php-apc'];
+  }
+}

@@ -2,17 +2,11 @@ Exec { path => "/usr/sbin/:/sbin:/usr/bin:/bin" }
 File { owner => 'root', group => 'root' }
 
 node 'default' {
-  $authorized_key = 'YOUR SSH PUBLIC KEY'
-  $mysql_password = 'YOUR DESIRED MYSQL ROOT PASSWORD'
-  $username = 'YOUR DESIRED USERNAME'
-  $mail = 'YOUR E-MAIL ADDRESS'
-
-  $github_user = 'YOUR GITHUB USERNAME'
-  $github_token = 'YOUR GITHUB TOKEN'
+  import 'settings'
 
   include puppet
-#  include users
   include ssh
+  include sudo
   include iptables
   include cron
   include ppa
@@ -22,6 +16,7 @@ node 'default' {
   include nginx
   include ntp
   include php
+  include memcache
   include drush
   include mysqltuner
   include mtop
