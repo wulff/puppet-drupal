@@ -42,6 +42,15 @@ class munin {
     '/etc/munin/plugins/munin_stats':
       ensure => absent,
       require => Package['munin-node'];
+    '/etc/munin/plugins/nfs4_client':
+      ensure => absent,
+      require => Package['munin-node'];
+    '/etc/munin/plugins/nfsd':
+      ensure => absent,
+      require => Package['munin-node'];
+    '/etc/munin/plugins/nfsd4':
+      ensure => absent,
+      require => Package['munin-node'];
     '/etc/munin/plugins/uptime':
       ensure => absent,
       require => Package['munin-node'];
