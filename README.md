@@ -3,7 +3,7 @@ This Puppet manifest configures Nginx, MySQL, and PHP-FPM for use as a Drupal ho
 To get started, run the following commands to update the package lists and install the packages required to download and use the manifest:
 
     sudo apt-get update
-    sudo apt-get install git-core openssh-server puppet
+    sudo apt-get install git-core puppet
 
 Next, clone the Git repository:
 
