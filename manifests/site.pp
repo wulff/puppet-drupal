@@ -19,6 +19,7 @@ node 'default' {
   include memcache
   include drush
   include mysqltuner
+  include tuningprimer
   include mtop
   include htop
   include munin

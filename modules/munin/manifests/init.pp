@@ -1,6 +1,6 @@
 class munin {
   package {
-    ['munin', 'munin-node']:
+    ['munin', 'munin-node', 'libwww-perl']:
       ensure => present;
   }
 
