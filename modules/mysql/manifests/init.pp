@@ -19,7 +19,7 @@ class mysql {
       command => "mysqladmin -uroot password $mysql_password",
       require => Package['mtop'] # mtop needs an empty root password
   }
-  
+
   file {
     '/etc/mysql/my.cnf':
       source => 'puppet:///modules/mysql/my.cnf',

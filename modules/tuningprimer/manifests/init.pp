@@ -1,9 +1,16 @@
 class tuningprimer {
+  package {
+    'bc':
+      ensure => present;
+  }
+
   exec {
     'download-tuning-primer':
       command => 'wget -O /opt/tuning-primer.sh http://launchpad.net/mysql-tuning-primer/trunk/1.6-r1/+download/tuning-primer.sh',
-      creates => '/opt/tuning-primer.sh';
+      creates => '/opt/tuning-primer.sh',
+      require => Package['bc'];
   }
+
   file {
     '/usr/local/bin/tuning-primer.sh':
       ensure => '/opt/tuning-primer.sh',
